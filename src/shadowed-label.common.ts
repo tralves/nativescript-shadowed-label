@@ -1,28 +1,29 @@
-import { Observable } from 'tns-core-modules/data/observable';
-import * as app from 'tns-core-modules/application';
-import * as dialogs from 'tns-core-modules/ui/dialogs';
+import { Label } from 'tns-core-modules/ui/label/label';
+import { Property, CssProperty, Style } from 'tns-core-modules/ui/core/properties';
+import { Color } from 'tns-core-modules/color/color';
 
-export class Common extends Observable {
-  public message: string;
-
-  constructor() {
-    super();
-    this.message = Utils.SUCCESS_MSG();
-  }
-
-  public greet() {
-    return "Hello, NS";
-  }
+export class ShadowedLabel extends Label {
+    textShadow: number;
 }
 
-export class Utils {
-  public static SUCCESS_MSG(): string {
-    let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}.`;
+export const textShadowProperty = new CssProperty<Style, number>({
+    name: 'textShadow',
+    cssName: 'text-shadow',
+    valueConverter: value => {
+        console.log('--------------- textShadow Value!! : ' + value);
+        return 17; /*{
+            offsetX: 4,
+            offsetY: 4,
+            blurRadius: 4,
+            color: new Color('black')
+        };*/
+    }
+});
+textShadowProperty.register(Style);
 
-    setTimeout(() => {
-      dialogs.alert(`${msg} For real. It's really working! :)`).then(() => console.log(`Dialog closed.`));
-    }, 2000);
-
-    return msg;
-  }
-}
+// export interface TextShadow {
+//     offsetX: number;
+//     offsetY: number;
+//     blurRadius: number;
+//     color: Color;
+// }
