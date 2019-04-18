@@ -5,3 +5,5 @@ export declare class ShadowedLabel extends Common {
      */
     textShadow: number;
 }
+
+export declare const textShadowProperty: CssProperty<Style, number>;
