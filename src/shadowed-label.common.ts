@@ -1,29 +1,43 @@
 import { Label } from 'tns-core-modules/ui/label/label';
-import { Property, CssProperty, Style } from 'tns-core-modules/ui/core/properties';
+import { CssProperty, Style } from 'tns-core-modules/ui/core/properties';
 import { Color } from 'tns-core-modules/color/color';
+// import { Style } from 'tns-core-modules/ui/styling/style';
 
 export class ShadowedLabel extends Label {
-    textShadow: number;
+    get textShadow() {
+        return this.style.textShadow;
+    }
+
+    set textShadow(value: any) {
+        this.style.textShadow = value;
+    }
 }
 
-export const textShadowProperty = new CssProperty<Style, number>({
+export const textShadowProperty = new CssProperty<Style, string | TextShadow>({
     name: 'textShadow',
     cssName: 'text-shadow',
     valueConverter: value => {
         console.log('--------------- textShadow Value!! : ' + value);
-        return 17; /*{
+        return {
             offsetX: 4,
             offsetY: 4,
             blurRadius: 4,
             color: new Color('black')
-        };*/
+        };
     }
 });
 textShadowProperty.register(Style);
 
-// export interface TextShadow {
-//     offsetX: number;
-//     offsetY: number;
-//     blurRadius: number;
-//     color: Color;
-// }
+// Augmenting Style definition so it includes our myOpacity property
+declare module 'tns-core-modules/ui/styling/style' {
+    interface Style {
+        textShadow: string | TextShadow;
+    }
+}
+
+export interface TextShadow {
+    offsetX: number;
+    offsetY: number;
+    blurRadius: number;
+    color: Color;
+}

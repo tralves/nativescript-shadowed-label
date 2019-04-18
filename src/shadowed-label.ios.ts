@@ -1,20 +1,14 @@
-import {
-    ShadowedLabel as Common,
-    textShadowProperty /*, TextShadow*/
-} from './shadowed-label.common';
+import { ShadowedLabel as Common, textShadowProperty, TextShadow } from './shadowed-label.common';
 
 export class ShadowedLabel extends Common {
     constructor() {
         super();
-
-        setTimeout(() => {
-            console.dir(this);
-            this.text = 'asasd';
-        }, 2000);
     }
 
-    [textShadowProperty.setNative](value: number) {
-        console.dir(value);
-        this.text = 'asasd111';
+    [textShadowProperty.setNative](value: TextShadow) {
+        setTimeout(() => {
+            console.dir(value);
+            this.text = value.color.name;
+        }, 2000);
     }
 }
