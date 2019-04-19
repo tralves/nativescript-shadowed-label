@@ -3,10 +3,11 @@ import { ShadowedLabel as Common, textShadowProperty } from './shadowed-label.co
 
 export class ShadowedLabel extends Common {
     [textShadowProperty.setNative](value: TextShadow) {
-        this.nativeTextViewProtected.shadowColor = value.color.ios;
-        this.nativeTextViewProtected.shadowOffset = CGSizeMake(value.offsetX, value.offsetY);
-        this.nativeTextViewProtected.shadowRadius = value.blurRadius;
-        this.nativeTextViewProtected.shouldRasterize = true;
-        this.nativeTextViewProtected.masksToBounds = false;
+        this.nativeTextViewProtected.layer.shadowOpacity = 1;
+        this.nativeTextViewProtected.layer.shadowRadius = value.blurRadius;
+        this.nativeTextViewProtected.layer.shadowColor = value.color.ios.CGColor;
+        this.nativeTextViewProtected.layer.shadowOffset = CGSizeMake(value.offsetX, value.offsetY);
+        this.nativeTextViewProtected.layer.shouldRasterize = true;
+        this.nativeTextViewProtected.layer.masksToBounds = false;
     }
 }
