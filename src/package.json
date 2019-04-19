@@ -1,7 +1,7 @@
 {
     "name": "nativescript-shadowed-label",
     "version": "0.1.0",
-    "description": "Your awesome NativeScript plugin.",
+    "description": "A NativeScript Label that supports text shadow.",
     "main": "shadowed-label",
     "typings": "index.d.ts",
     "nativescript": {
@@ -38,8 +38,8 @@
         "iOS"
     ],
     "author": {
-        "name": "Your Name",
-        "email": "youremail@yourdomain.com"
+        "name": "Tiago Alves",
+        "email": "tralves@gmail.com"
     },
     "bugs": {
         "url": "https://github.com/tralves/nativescript-shadowed-label/issues"

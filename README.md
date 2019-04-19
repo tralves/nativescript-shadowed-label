@@ -6,8 +6,8 @@
 <a href="https://www.npmjs.com/package/nativescript-shadowed-label">
     <img src="https://img.shields.io/npm/dt/nativescript-shadowed-label.svg?label=npm%20downloads" alt="npm">
 </a>
-<a href="https://github.com/bradmartin/nativescript-shadowed-label/stargazers">
-    <img src="https://img.shields.io/github/stars/bradmartin/nativescript-shadowed-label.svg" alt="stars">
+<a href="https://github.com/tralves/nativescript-shadowed-label/stargazers">
+    <img src="https://img.shields.io/github/stars/tralves/nativescript-shadowed-label.svg" alt="stars">
 </a>
 <a href="https://paypal.me/tralves">
     <img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="donate">
