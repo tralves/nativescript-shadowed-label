@@ -1,6 +1,6 @@
 {
     "name": "nativescript-shadowed-label",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "Your awesome NativeScript plugin.",
     "main": "shadowed-label",
     "typings": "index.d.ts",
