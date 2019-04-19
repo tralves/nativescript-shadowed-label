@@ -1,6 +1,6 @@
 {
     "name": "nativescript-shadowed-label",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A NativeScript Label that supports text shadow.",
     "main": "shadowed-label",
     "typings": "index.d.ts",
@@ -35,7 +35,10 @@
         "NativeScript",
         "JavaScript",
         "Android",
-        "iOS"
+        "iOS",
+        "Shadows",
+        "Angular",
+        "Vue"
     ],
     "author": {
         "name": "Tiago Alves",
