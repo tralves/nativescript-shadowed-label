@@ -1,7 +1,44 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
-  xmlns:shadowedLabel="nativescript-shadowed-label">
-  <StackLayout class="p-20">
-    <Label text="{{ message }}" class="t-20 text-center c-black" textWrap="true"/>
-    <shadowedLabel:ShadowedLabel text="I has shadow" textShadow="2 10 4 rgba(255, 0, 0, 0.5)" fontWeight="bold" color="blue" fontSize="40" class="p-30 text-center"/>
-  </StackLayout>
+<Page
+  xmlns="http://schemas.nativescript.org/tns.xsd"
+  loaded="pageLoaded" class="page"
+  xmlns:shadowedLabel="nativescript-shadowed-label"
+>
+  <GridLayout rows="auto auto auto auto" class="p-20">
+    <shadowedLabel:ShadowedLabel
+      row="0"
+      class="h1 text-center"
+      text="title with shadow"
+    />
+    <shadowedLabel:ShadowedLabel
+      row="1"
+      text="color shadow"
+      textShadow="2 10 4 rgb(255, 100, 100)"
+      fontStyle="italic"
+      fontSize="40"
+      class="m-b-20 text-center"
+    />
+    <Label
+      row="2"
+      backgroundColor="#9af"
+      width="50%"
+      height="50"
+    />
+    <shadowedLabel:ShadowedLabel
+      row="2"
+      text="transparent shadow"
+      textShadow="2 10 2 rgba(10, 10, 10, 0.5)"
+      fontSize="30"
+      fontFamily="serif"
+      fontWeight="bold"
+      class="c-black text-center"
+    />
+
+    <shadowedLabel:ShadowedLabel
+      row="3"
+      class="m-t-20 c-black"
+      style="text-shadow: 1 1 1 #55a"
+      textWrap="true"
+      text="long text with shadow! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    />
+  </GridLayout>
 </Page>

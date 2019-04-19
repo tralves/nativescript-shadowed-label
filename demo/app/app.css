@@ -1,1 +1,6 @@
 ﻿@import '~nativescript-theme-core/css/core.light.css';
+
+.h1 {
+    text-shadow: 2 2 2 #aaa;
+    font-weight: bold;
+}
