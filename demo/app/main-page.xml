@@ -2,6 +2,6 @@
   xmlns:shadowedLabel="nativescript-shadowed-label">
   <StackLayout class="p-20">
     <Label text="{{ message }}" class="t-20 text-center c-black" textWrap="true"/>
-    <shadowedLabel:ShadowedLabel text="2223" textShadow="2 3 3 #211" fontWeight="bold" color="blue" class="t-20 text-center"/>
+    <shadowedLabel:ShadowedLabel text="I has shadow" textShadow="2 10 4 rgb(255, 0, 0)" fontWeight="bold" color="blue" fontSize="40" class="p-30 text-center"/>
   </StackLayout>
 </Page>

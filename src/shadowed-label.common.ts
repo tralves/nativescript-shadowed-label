@@ -1,9 +1,13 @@
+import { ShadowedLabel as ShadowedLabelDefinition, TextShadow } from './index';
 import { Label } from 'tns-core-modules/ui/label/label';
 import { CssProperty, Style } from 'tns-core-modules/ui/core/properties';
 import { Color } from 'tns-core-modules/color/color';
-// import { Style } from 'tns-core-modules/ui/styling/style';
+// import { Length } from 'tns-core-modules/ui/styling/style-properties';
+import { isIOS } from 'tns-core-modules/platform';
+import { layout } from 'tns-core-modules/utils/utils';
+import { dip } from 'tns-core-modules/ui/core/view';
 
-export class ShadowedLabel extends Label {
+export class ShadowedLabel extends Label implements ShadowedLabelDefinition {
     get textShadow() {
         return this.style.textShadow;
     }
@@ -16,13 +20,14 @@ export class ShadowedLabel extends Label {
 export const textShadowProperty = new CssProperty<Style, string | TextShadow>({
     name: 'textShadow',
     cssName: 'text-shadow',
+    affectsLayout: isIOS,
     valueConverter: value => {
-        console.log('--------------- textShadow Value!! : ' + value);
+        const params = value.split(' ');
         return {
-            offsetX: 4,
-            offsetY: 4,
-            blurRadius: 4,
-            color: new Color('black')
+            offsetX: parseDIPs(params[0]),
+            offsetY: parseDIPs(params[1]),
+            blurRadius: parseDIPs(params[2]),
+            color: new Color(params.slice(3).join(''))
         };
     }
 });
@@ -35,9 +40,10 @@ declare module 'tns-core-modules/ui/styling/style' {
     }
 }
 
-export interface TextShadow {
-    offsetX: number;
-    offsetY: number;
-    blurRadius: number;
-    color: Color;
+function parseDIPs(value: string): dip {
+    if (value.indexOf('px') !== -1) {
+        return layout.toDeviceIndependentPixels(parseFloat(value.replace('px', '').trim()));
+    } else {
+        return parseFloat(value.replace('dip', '').trim());
+    }
 }

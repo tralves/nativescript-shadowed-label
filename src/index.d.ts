@@ -1,18 +1,17 @@
 import { CssProperty, Style } from 'tns-core-modules/ui/core/properties';
 import { ShadowedLabel as Common } from './shadowed-label.common';
 import { Color } from 'tns-core-modules/color/color';
+import { dip } from 'tns-core-modules/ui/core/view';
+
 export declare class ShadowedLabel extends Common {
-    /**
-     * Set the shadow opacity of the card view. ** iOS Only **
-     */
     textShadow: any;
 }
 
-export declare const textShadowProperty: CssProperty<Style, number>;
+export declare const textShadowProperty: CssProperty<Style, TextShadow>;
 
 export interface TextShadow {
-    offsetX: number;
-    offsetY: number;
-    blurRadius: number;
+    offsetX: dip;
+    offsetY: dip;
+    blurRadius: dip;
     color: Color;
 }

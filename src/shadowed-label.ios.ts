@@ -1,14 +1,12 @@
-import { ShadowedLabel as Common, textShadowProperty, TextShadow } from './shadowed-label.common';
+import { TextShadow } from './index';
+import { ShadowedLabel as Common, textShadowProperty } from './shadowed-label.common';
 
 export class ShadowedLabel extends Common {
-    constructor() {
-        super();
-    }
-
     [textShadowProperty.setNative](value: TextShadow) {
-        setTimeout(() => {
-            console.dir(value);
-            this.text = value.color.name;
-        }, 2000);
+        this.nativeTextViewProtected.shadowColor = value.color.ios;
+        this.nativeTextViewProtected.shadowOffset = CGSizeMake(value.offsetX, value.offsetY);
+        this.nativeTextViewProtected.shadowRadius = value.blurRadius;
+        this.nativeTextViewProtected.shouldRasterize = true;
+        this.nativeTextViewProtected.masksToBounds = false;
     }
 }
