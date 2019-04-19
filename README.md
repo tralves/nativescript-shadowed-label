@@ -20,7 +20,7 @@ A NativeScript plugin that extends the `<Label>` UI widget by adding the `text-s
 ## Installation
 
 ```bash
-tns plugin add nativescript-shadowed-plugin
+tns plugin add nativescript-shadowed-label
 ```
 
 ## Usage
