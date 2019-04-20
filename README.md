@@ -15,7 +15,9 @@
 
 A NativeScript plugin that extends the `<Label>` UI widget by adding the `text-shadow` CSS property.
 
-![Sample1](images/shadowed-label-demo.png)
+| shadow examples                     | sample from the [playground](https://play.nativescript.org/?template=play-vue&id=roCIm3) |
+| ----------------------------------- | ---------------------------------------------------------------------------------------- |
+| ![](images/shadowed-label-demo.png) | ![](images/playing-with-shadows.gif)                                                     |
 
 ## Installation
 
