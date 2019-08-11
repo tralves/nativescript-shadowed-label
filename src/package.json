@@ -1,6 +1,6 @@
 {
   "name": "nativescript-shadowed-label",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "A NativeScript Label that supports text shadow.",
   "main": "shadowed-label",
   "typings": "index.d.ts",
