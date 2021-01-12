@@ -19,6 +19,8 @@ A NativeScript plugin that extends the `<Label>` UI widget by adding the `text-s
 | ----------------------------------- | ---------------------------------------------------------------------------------------- |
 | ![](images/shadowed-label-demo.png) | ![](images/playing-with-shadows.gif)                                                     |
 
+> This version is for NS 6. You will find the NS 7 version [here](https://github.com/tralves/nativescript-plugins/tree/master/packages/shadowed-label).
+
 ## Installation
 
 ```bash
